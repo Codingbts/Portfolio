@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,200;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portfolio.css">
 </head>
@@ -25,7 +26,13 @@
             <h1>PORTFOLIO DE <span>SAAD</span></h1>
             <div class="soustitre">
                 <h2>Je <span class="auto-type" style="color:white">suis étudiant en 2ème année de <span> BTS SIO SLAM </span></span></h2>
-
+            </div>
+            <div class="social-media">
+                <a href="https://github.com/Codingbts" target="_blank"><i class='bx bxl-github'></i></a>
+            </div>
+            <div class="btn-group">
+                <a href="images/CV Saad info.pdf" download="CV_de_Saad"><i class='bx bx-file-find'></i>Télécharger mon CV</a>
+                <a href="#contact">Contactez-moi</a>
             </div>
         </div>
         <div class="home-img">
@@ -71,21 +78,86 @@
         </section>
         <h2 class="heading">COMPETENCES</h2>
         <section class="comp">
+            <h3>Langage de programmation & outils de programmation</h3>
             <div class="banner">
-                <div class="slider" style="--quantity:10">
-                    <div class="item" style="--position:1"><img src="images/html-1.svg" alt="html"></div>
-                    <div class="item" style="--position:2"><img src="images/bootstrap-5-1.svg" alt="bootstrap"></div>
-                    <div class="item" style="--position:3"><img src="images/c--4.svg" alt="c#"></div>
-                    <div class="item" style="--position:4"><img src="images/css-3.svg" alt="css"></div>
-                    <div class="item" style="--position:5"><img src="images/github-icon-1.svg" alt="github"></div>
-                    <div class="item" style="--position:6"><img src="images/java-4.svg" alt="java"></div>
-                    <div class="item" style="--position:7"><img src="images/mariadb.svg" alt="mariadb"></div>
-                    <div class="item" style="--position:8"><img src="images/mysql-3.svg" alt="mysql"></div>
-                    <div class="item" style="--position:9"><img src="images/postgresql.svg" alt="postegresql"></div>
-                    <div class="item" style="--position:10"><img src="images/symfony.svg" alt="symfony"></div>
+                <div class="slider" style="--quantity:12">
+                    <div class="item" style="--position:1">
+                        <img src="images/html-1.svg" alt="html">
+                        <p class="skill-name">HTML</p>
+                    </div>
+                    <div class="item" style="--position:2">
+                        <img src="images/css-3.svg" alt="css">
+                        <p class="skill-name">CSS</p>
+
+                    </div>
+                    <div class="item" style="--position:3">
+                        <img src="images/c--4.svg" alt="c#">
+                        <p class="skill-name">C#</p>
+                    </div>
+                    <div class="item" style="--position:4">
+                        <img src="images/new-php-logo.svg" alt="PHP">
+                        <p class="skill-name">PHP</p>
+                    </div>
+                    <div class="item" style="--position:5">
+                        <img src="images/java-4.svg" alt="java">
+                        <p class="skill-name">Java</p>
+                    </div>
+                    <div class="item" style="--position:6">
+                        <img src="images/python-5.svg" alt="Python">
+                        <p class="skill-name">Python</p>
+                    </div>
+                    <div class="item" style="--position:7">
+                        <img src="images/icons8-github.svg" alt="github">
+                        <p class="skill-name">GitHub</p>
+                    </div>
+                    <div class="item" style="--position:8">
+                        <img src="images/eclipse-11.svg" alt="eclipse">
+                        <p class="skill-name">Eclipse</p>
+                    </div>
+                    <div class="item" style="--position:9">
+                        <img src="images/jetbrains-pycharm.svg" alt="PyCharm">
+                        <p class="skill-name">PyCharm</p>
+                    </div>
+                    <div class="item" style="--position:10">
+                        <img src="images/NetBeans-Logo.wine.svg" alt="netbeans">
+                        <p class="skill-name">Netbeans</p>
+                    </div>
+                    <div class="item" style="--position:11">
+                        <img src="images/visual-studio-code-1.svg" alt="visual studio code">
+                        <p class="skill-name">Visual studio code</p>
+                    </div>
+                    <div class="item" style="--position:12">
+                        <img src="images/visual-studio-2013.svg" alt="visual studio">
+                        <p class="skill-name">Visual studio</p>
+                    </div>
+                </div>
+            </div>
+            <h3>Technologies & Frameworks</h3>
+            <div class="wrapper">
+                <div class="wrap item1">
+                    <img src="images/symfony.svg" alt="symfony">
+                </div>
+                <div class="wrap item2">
+                    <img src="images/bootstrap-5-1.svg" alt="bootstrap">
+                </div>
+                <div class="wrap item3">
+                    <img src="images/tailwind-css-1.svg" alt="taildwind css">
+                </div>
+                <div class="wrap item4">
+                    <img src="images/wordpress-icon-1.svg" alt="wordpress">
+                </div>
+                <div class="wrap item5">
+                    <img src="images/mongodb-icon-2.svg" alt="mongodb">
+                </div>
+                <div class="wrap item6">
+                    <img src="images/mysql-3.svg" alt="mysql">
+                </div>
+                <div class="wrap item7">
+                    <img src="images/postgresql.svg" alt="postgresql">
                 </div>
             </div>
         </section>
+
         <section class="education" id="education">
             <h2 class="heading">FORMATION</h2>
             <div class="timeline-items">
@@ -94,8 +166,9 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2021</div>
                     <div class="timeline-content">
-                        <h3>Highschool</h3>
-                        <p>form1</p>
+                        <h1>Baccalauréat général</h1>
+                        <h2>Spécialité physique-chimie/SVT</h2>
+                        <p>Lycée Sonia Delaunay</p>
                     </div>
                 </div>
 
@@ -103,8 +176,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2022</div>
                     <div class="timeline-content">
-                        <h3>Highschool</h3>
-                        <p> form 2</p>
+                        <h2>Licence Science pour l'ingénieur</h2>
+                        <p>Université Sorbonne Paris Nord</p>
                     </div>
                 </div>
 
@@ -113,8 +186,8 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2023</div>
                     <div class="timeline-content">
-                        <h3>Highschool</h3>
-                        <p>form 3</p>
+                        <h2>Licence Gestion</h2>
+                        <p>UVSQ</p>
                     </div>
                 </div>
 
@@ -123,8 +196,17 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-date">2024</div>
                     <div class="timeline-content">
-                        <h3>Highschool</h3>
-                        <p>form 4</p>
+                        <h2>Licence Gestion/BTS SIO SLAM 1ère année</h2>
+                        <p>UVSQ/CNED</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h2>BTS SIO SLAM 2ème année</h2>
+                        <p>CNED</p>
                     </div>
                 </div>
             </div>
@@ -140,8 +222,8 @@
                     <div class="grid-card">
                         <h1>Développeur web PHP symfony</h1>
                         <h2>5 semaines<h2>
-                                <h3>Grec de l'Aqueduc</h3>
-                                <p>Création d'un site vitrine Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui fugiat libero nulla dolorum aliquam beatae voluptatem molestias non at.</p>
+                            <h3>Grec de l'Aqueduc</h3>
+                            <p>Création d'un site vitrine Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui fugiat libero nulla dolorum aliquam beatae voluptatem molestias non at.</p>
                     </div>
 
                     <div class="grid-card">
@@ -149,7 +231,6 @@
                         <h2>5 semaines<h2>
                                 <h3>Noma Direct</h3>
                                 <p>Création d'un site vitrine Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui fugiat libero nulla dolorum aliquam beatae voluptatem molestias non at.</p>
-
                     </div>
                 </div>
                 <img src="images/Programming-bro.svg" alt="Illustration experience">
@@ -248,8 +329,9 @@
                 J'ai décidé d'effectuer ma veille technologique sur deux domaines qui me passionne. Ces domaines sont l'intelligence
                 artificielle et la robotique.
             </p>
-            <img src="images/Artificial intelligence-bro.svg" alt="Robot-IA illu">
             <h3>intelligence artificielle</h3>
+            <img src="images/Artificial intelligence-bro.svg" alt="Robot-IA illu">
+
         </section>
         <section class="contact" id="contact">
             <h2 class="heading">CONTACTEZ-<span>MOI</span></h2>
@@ -274,11 +356,7 @@
                 </form>
             </div>
         </section>
-
-
-
     </div>
-
 
     <?php require_once(__DIR__ . '/footer.php') ?>
     <script src="app.js"></script>
@@ -309,55 +387,55 @@
         });
     </script>
     <script>
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-    const errorMessageDiv = document.getElementById('error-message');
-    
-    // Réinitialiser les messages d'erreur
-    errorMessageDiv.innerHTML = '';  // Supprimer tout message d'erreur
-    let errorMsg = '';
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            const errorMessageDiv = document.getElementById('error-message');
 
-    // Récupérer les valeurs des champs
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
 
-    // Vérification des champs vides
-    if (name === '' || email === '' || subject === '' || message === '') {
-        errorMsg += 'Tous les champs doivent être remplis !<br>';
-    }
+            errorMessageDiv.innerHTML = '';
+            let errorMsg = '';
 
-    // Vérification de l'email uniquement si tous les champs sont remplis
-    if (name !== '' && email !== '' && subject !== '' && message !== '') {
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-        if (!emailRegex.test(email)) {
-            errorMsg += 'L\'email saisi n\'est pas valide !<br>';
-        }
-    }
 
-    // Si des erreurs existent, afficher le message et stopper l'envoi
-    if (errorMsg !== '') {
-        errorMessageDiv.innerHTML = `<div>${errorMsg}</div>`;
-        errorMessageDiv.style.backgroundColor = 'black';
-        errorMessageDiv.style.color = '#04f430';
-        errorMessageDiv.style.border = '2px solid #04f430';
-        errorMessageDiv.style.boxShadow = '0 0 25px #04f430';
-        errorMessageDiv.style.padding = '10px';
-        errorMessageDiv.style.borderRadius = '10px';
-        errorMessageDiv.style.fontSize = '16px';
-        errorMessageDiv.style.marginBottom = '50px';
-        errorMessageDiv.style.display = 'block';
-        event.preventDefault();
-    } else {
-        
-        errorMessageDiv.innerHTML = ''; 
-        errorMessageDiv.removeAttribute('style'); 
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-        
-        errorMessageDiv.style.display = 'none'; 
-    }
-});
-</script>
+
+            if (name === '' || email === '' || subject === '' || message === '') {
+                errorMsg += 'Tous les champs doivent être remplis !<br>';
+            }
+
+
+            if (name !== '' && email !== '' && subject !== '' && message !== '') {
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+                if (!emailRegex.test(email)) {
+                    errorMsg += 'L\'email saisi n\'est pas valide !<br>';
+                }
+            }
+
+
+            if (errorMsg !== '') {
+                errorMessageDiv.innerHTML = `<div>${errorMsg}</div>`;
+                errorMessageDiv.style.backgroundColor = 'black';
+                errorMessageDiv.style.color = '#04f430';
+                errorMessageDiv.style.border = '2px solid #04f430';
+                errorMessageDiv.style.boxShadow = '0 0 25px #04f430';
+                errorMessageDiv.style.padding = '10px';
+                errorMessageDiv.style.borderRadius = '10px';
+                errorMessageDiv.style.fontSize = '16px';
+                errorMessageDiv.style.marginBottom = '50px';
+                errorMessageDiv.style.display = 'block';
+                event.preventDefault();
+            } else {
+
+                errorMessageDiv.innerHTML = '';
+                errorMessageDiv.removeAttribute('style');
+
+
+                errorMessageDiv.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>

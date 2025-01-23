@@ -95,7 +95,7 @@ section{
     text-align: left;
     justify-content: center;
     margin-top: 5rem;
-    gap: 5rem;
+    gap: 3rem;
 }
 span{
     color: #04f430;
@@ -112,6 +112,59 @@ span{
     margin-top: 1.5rem;
     line-height: 1;
 }
+
+.social-media a{
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: transparent;
+    border: 2px solid #04f430;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    color: #04f430;
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease-in-out;
+}
+
+.social-media a:hover{
+    color: black;
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px #04f430;
+    background-color: #04f430;
+}
+
+.btn-group{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btn-group a{
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid #04f430;
+    background-color: black;
+    border-radius: 25px;
+    color: #04f430;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 800;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-group a:hover {
+    background-color: #04f430;
+    border-radius: 25px;
+    color: black;
+    box-shadow: 0 0 35px #04f430;
+    transform: scale(1.1);
+
+}
+
+
 .home-img{
     border-radius: 50%;
 }
@@ -135,6 +188,10 @@ span{
 .soustitre{
     display: flex;
     flex-direction: row;
+}
+
+.soustitre h2{
+    font-size: 25px;
 }
 
 .heading{
@@ -331,50 +388,73 @@ span{
     mix-blend-mode: screen; 
 }
 
-
-.banner{
+.banner {
     width: 100%;
     height: 100vh;
     text-align: center;
     position: relative;
 }
 
-.banner .slider{
+.banner .slider {
     position: absolute;
     width: 150px;
     height: 200px;
     top: 10%;
-    left: calc(50% - 100px);
+    left: calc(50% - 75px);
     transform-style: preserve-3d;
     transform: perspective(1000px);
     animation: autoRun 20s linear infinite;
+    cursor: pointer;
 }
+
 @keyframes autoRun {
-    from{
+    from {
         transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
-    }to{
+    }
+    to {
         transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
     }
 }
 
-.banner .slider .item{
+.banner .slider .item {
     position: absolute;
     inset: 0 0 0 0;
-    transform: 
-       rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
-       translateZ(550px);
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(450px);
+    
 }
 
-.banner .slider .item img{
+.banner .slider .item img {
     width: 100%;
     height: 100%;
+    display: block;
+    transition: transform 0.3s ease-in-out;
 }
 
-.experience .heading{
-    font-size: 8rem;
-    text-align: center;
-    margin-bottom: -3rem;
+.banner .slider .item .skill-name {
+    position: absolute;
+    bottom: -40px;  
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    color: #fff;
+    border: 2px solid #04f430;
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
 }
+
+.banner .slider .item:hover .skill-name{
+    background-color: #04f430;
+    color: black;
+}
+
+
+.banner .slider .item .skill-name {
+    opacity: 1;  
+}
+
 
 .experience-info{
     display: flex;
@@ -383,6 +463,94 @@ span{
     gap: 2rem;
     margin-left: 5%;
 }
+.wrapper{
+    width: 90%;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    height: 100px;
+    margin-top: 5rem;
+    overflow: hidden;
+}
+
+.wrap{
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.wrap img {
+    max-width: 100%; 
+    max-height: 100%;
+    object-fit: contain; 
+}
+
+.wrap{
+
+    left: max(calc(200px*7), 100%);
+    animation-name: scrollleft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scrollleft{
+    to{
+        left: -200px;
+    }
+}
+
+.item1{
+    animation-delay: calc(30s / 7 * (7 - 1)* -1);
+}
+
+.item2{
+    animation-delay: calc(30s / 7 * (7 - 2)* -1);
+}
+
+.item3{
+    animation-delay: calc(30s / 7 * (7 - 3)* -1);
+}
+
+.item4{
+    animation-delay: calc(30s / 7 * (7 - 4)* -1);
+}
+
+.item5{
+    animation-delay: calc(30s / 7 * (7 - 5)* -1);
+}
+
+.item6{
+    animation-delay: calc(30s / 7 * (7 - 6)* -1);
+}
+
+.item7{
+    animation-delay: calc(30s / 7 * (7 - 7)* -1);
+}
+
+.comp h3 {
+    font-size: 30px;
+    font-weight: 500;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.comp h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0; 
+    left: 11%; 
+    transform: translateX(-50%);
+    width: 20%; 
+    height: 5px; 
+    background-color: #04f430; 
+}
+
 
 .experience img{
     width: 50vw;
@@ -514,7 +682,7 @@ span{
 .container-project {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 10rem; 
+    gap: 5rem; 
     justify-items: center;
     padding: 1rem;
 }
@@ -598,4 +766,64 @@ span{
 .content-project .social .title{
     font-size: large;
     margin: 10px 0;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 200vh;
+    height: 135vh;
+    background-color: black;
+}
+
+
+.container .msgconf h1{
+    font-size: 40px;
+    font-weight: 800;
+    color: #04f430;
+}
+
+.container .msgconf h2{
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+}
+
+.container .container-bas{
+    width: 100vh;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.container .container-bas img{
+    width: 150%;
+    height: 90%;
+    position: relative;
+}
+
+.container .container-bas a{
+    border: 2px solid #04f430;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #04f430;
+    font-size: 20px;
+    padding: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.container a:hover{
+    border: 2px solid #04f430;
+    background-color: #04f430;
+    color: black;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #04f430
+                0 0 25px #04f430;
+    transform: scale(1.1);
 }
