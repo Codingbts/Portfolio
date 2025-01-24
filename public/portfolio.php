@@ -448,6 +448,7 @@
             document.body.dataset.theme = "dark";
             icon.src = "images/sun.png";
             updateColorOptions(darkModeColors); // Options pour le mode sombre
+            applyStoredColor("dark"); // Appliquer la couleur sauvegardée en mode sombre
         } else {
             // Passer en mode clair
             document.documentElement.style.setProperty('--background-color', '#E0F7FA');
@@ -455,6 +456,7 @@
             document.body.dataset.theme = "light";
             icon.src = "images/moon.png";
             updateColorOptions(lightModeColors); // Options pour le mode clair
+            applyStoredColor("light"); // Appliquer la couleur sauvegardée en mode clair
         }
     };
 
@@ -498,25 +500,39 @@
     }
 
     // Sauvegarder la couleur principale sélectionnée dans le localStorage
-    function saveSelectedColor() {
+    function saveSelectedColor(mode) {
         var mainColor = document.getElementById("color-picker-main").value;
-        localStorage.setItem("mainColor", mainColor);
+        localStorage.setItem(mode + "Color", mainColor); // Sauvegarder la couleur selon le mode
     }
 
     // Charger la couleur principale sauvegardée
     function loadStoredColor() {
-        var mainColor = localStorage.getItem("mainColor");
+        var mainColorDark = localStorage.getItem("darkColor");
+        var mainColorLight = localStorage.getItem("lightColor");
 
+        // Charger la couleur du mode actuel
+        if (document.body.dataset.theme === "light" && mainColorLight) {
+            document.getElementById("color-picker-main").value = mainColorLight;
+            applySelectedColors();
+        } else if (document.body.dataset.theme === "dark" && mainColorDark) {
+            document.getElementById("color-picker-main").value = mainColorDark;
+            applySelectedColors();
+        }
+    }
+
+    // Appliquer la couleur sauvegardée selon le mode (light ou dark)
+    function applyStoredColor(mode) {
+        var mainColor = localStorage.getItem(mode + "Color"); // Récupérer la couleur selon le mode actuel
         if (mainColor) {
             document.getElementById("color-picker-main").value = mainColor;
-            applySelectedColors();
+            applySelectedColors(); // Appliquer la couleur principale et secondaire
         }
     }
 
     // Event listener pour les changements de couleur principale
     document.getElementById("color-picker-main").addEventListener("change", function() {
         applySelectedColors();
-        saveSelectedColor();
+        saveSelectedColor(document.body.dataset.theme); // Sauvegarder la couleur selon le mode actuel
         closeDropdownMenu(); // Fermer le menu après sélection
     });
 
@@ -540,6 +556,7 @@
         dropdownMenu.style.display = isVisible ? "none" : "block";
     });
 </script>
+
 
 </body>
 
