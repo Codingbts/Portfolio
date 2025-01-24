@@ -21,11 +21,12 @@
 
 <body>
     <?php require_once(__DIR__ . '/header.php'); ?>
+
     <section class="home" id="home">
         <div class="home-content">
             <h1>PORTFOLIO DE <span>SAAD</span></h1>
             <div class="soustitre">
-                <h2>Je <span class="auto-type" style="color:white">suis étudiant en 2ème année de <span> BTS SIO SLAM </span></span></h2>
+                <h2>Je <span class="auto-type">suis étudiant en 2ème année de <span> BTS SIO SLAM</span></span></h2>
             </div>
             <div class="social-media">
                 <a href="https://github.com/Codingbts" target="_blank"><i class='bx bxl-github'></i></a>
@@ -33,6 +34,7 @@
             <div class="btn-group">
                 <a href="images/CV Saad info.pdf" download="CV_de_Saad"><i class='bx bx-file-find'></i>Télécharger mon CV</a>
                 <a href="#contact">Contactez-moi</a>
+
             </div>
         </div>
         <div class="home-img">
@@ -77,7 +79,7 @@
             </div>
         </section>
         <h2 class="heading">COMPETENCES</h2>
-        <section class="comp">
+        <section class="comp" id="comp">
             <h3>Langage de programmation & outils de programmation</h3>
             <div class="banner">
                 <div class="slider" style="--quantity:12">
@@ -222,8 +224,8 @@
                     <div class="grid-card">
                         <h1>Développeur web PHP symfony</h1>
                         <h2>5 semaines<h2>
-                            <h3>Grec de l'Aqueduc</h3>
-                            <p>Création d'un site vitrine Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui fugiat libero nulla dolorum aliquam beatae voluptatem molestias non at.</p>
+                                <h3>Grec de l'Aqueduc</h3>
+                                <p>Création d'un site vitrine Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui fugiat libero nulla dolorum aliquam beatae voluptatem molestias non at.</p>
                     </div>
 
                     <div class="grid-card">
@@ -237,7 +239,7 @@
 
             </div>
         </section>
-        <section>
+        <section id="projets">
             <h2 class="heading">PROJETS</h2>
             <div class="container-project">
                 <div class="project-card">
@@ -313,25 +315,39 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section id="epreuve">
             <h2 class="heading">EPREUVE E4</h2>
         </section>
-        <section>
+        <section id="veille">
             <h2 class="heading">VEILLE TECHNOLOGIQUE</h2>
-            <p>
-                La veille technologique est un processus qui permet d'être à jour sur les innovations et les tendances
-                dans le secteur des technologies. Il est très important d'effectuer fréquemment une veille technologique
-                pour ne pas être dépassé par les changements qui ont lieu dans une industrie suite à des innovations ou à des
-                changements syntaxique dans un langage de programmation. J'utilise différents moyens pour effectuer ma veille
-                technologique. En effet, j'utilise google alerts pour être quotidiennement au courant des nouvelles publications
-                sur le net en rapport avec l'intelligence artificielle et la robotique. De plus, je suis abonné à des chaines YouTube
-                qui parle de ses domaines.
-                J'ai décidé d'effectuer ma veille technologique sur deux domaines qui me passionne. Ces domaines sont l'intelligence
-                artificielle et la robotique.
-            </p>
-            <h3>intelligence artificielle</h3>
-            <img src="images/Artificial intelligence-bro.svg" alt="Robot-IA illu">
+            <div class="veille-container">
+                <h3>Qu'est ce que la veille technologique ?</h3>
+                <div class="intro-veille">
 
+                    <p>
+                        La veille technologique est un processus qui permet d'être à jour sur les innovations et les tendances
+                        dans le secteur des technologies. Il est très important d'effectuer fréquemment une veille technologique
+                        pour ne pas être dépassé par les changements qui ont lieu dans une industrie suite à des innovations ou à des
+                        changements syntaxique dans un langage de programmation. J'utilise différents moyens pour effectuer ma veille
+                        technologique. En effet, j'utilise google alerts pour être quotidiennement au courant des nouvelles publications
+                        sur le net en rapport avec l'intelligence artificielle et la robotique. Je suis par ailleurs abonné à plusieurs newlestter pour être tenu au courant des nouveautés. De plus, je suis abonné à des chaines YouTube
+                        qui parle de ses domaines.
+                        J'ai décidé d'effectuer ma veille technologique sur deux domaines qui me passionne. Ces domaines sont l'intelligence
+                        artificielle et la robotique.
+                    </p>
+                    <img src="images/Artificial intelligence-bro.svg" alt="Robot-IA illu">
+                </div>
+                <div class="IA">
+                    <h3>Intelligence artificielle</h3>
+                    <div class="dev-IA">
+                        <p>J'ai toujours été fasciné par l'Intelligence Artificielle. </p>
+                    </div>
+                </div>
+
+                <div class="robotique">
+                    <h3>Robotique</h3>
+                </div>
+            </div>
         </section>
         <section class="contact" id="contact">
             <h2 class="heading">CONTACTEZ-<span>MOI</span></h2>
@@ -364,8 +380,8 @@
     <script>
         var typed = new Typed(".auto-type", {
             strings: [
-                "suis étudiant en 2ème année de <span> BTS SIO SLAM </span>",
-                "vous souhaite la bienvenue dans <span>mon site !</span>"
+                'suis étudiant en 2ème année de <span> BTS SIO SLAM </span>',
+                'vous souhaite la bienvenue dans <span>mon site !</span>'
             ],
             typeSpeed: 100,
             backSpeed: 50,
@@ -387,55 +403,141 @@
         });
     </script>
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            const errorMessageDiv = document.getElementById('error-message');
+   var icon = document.getElementById("icon");
+var dropdownToggle = document.getElementById("dropdown-toggle");
+var dropdownMenu = document.getElementById("dropdown-menu");
 
+// Listes de couleurs principales et secondaires pour chaque mode
+var darkModeColors = [
+    { value: "#04F430", text: "Vert" },
+    { value: "#FF7043", text: "Rouge" },
+    { value: "#1E90FF", text: "Bleu" },
+    { value: "#FFFF00", text: "Jaune" }
+];
 
-            errorMessageDiv.innerHTML = '';
-            let errorMsg = '';
+var lightModeColors = [
+    { value: "#FFC1C1", text: "Rouge pâle" },
+    { value: "#FFFACD", text: "Jaune pâle" },
+    { value: "#E6E6FA", text: "Violet pâle" },
+    { value: "#ADD8E6", text: "Bleu clair" }
+];
 
+var lightModeSecondaryColors = [
+    { value: "#FF9999", text: "Rouge moins pâle" },
+    { value: "#FFE066", text: "Jaune moins pâle" },
+    { value: "#D8BFD8", text: "Violet moins pâle" },
+    { value: "#87CEEB", text: "Bleu ciel" }
+];
 
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
+// Fonction pour basculer entre les modes sombre et clair
+icon.onclick = function () {
+    var isLightMode = document.body.dataset.theme === "light";
 
+    if (isLightMode) {
+        // Mode sombre
+        document.documentElement.style.setProperty('--background-color', 'var(--background-color-dark)');
+        document.documentElement.style.setProperty('--write', 'var(--write-dark)');
+        icon.src = "images/sun.png";
+        document.body.dataset.theme = "dark";
 
-            if (name === '' || email === '' || subject === '' || message === '') {
-                errorMsg += 'Tous les champs doivent être remplis !<br>';
-            }
+        // Réinitialiser les couleurs par défaut en mode sombre
+        document.documentElement.style.setProperty('--main-color', '#04F430'); // Vert pour le mode sombre
+        document.documentElement.style.setProperty('--secondary-color', '#14CE36'); // Vert clair pour le mode sombre
 
+        // Mettre à jour les options de couleur en mode sombre
+        updateColorOptions(darkModeColors, darkModeColors);
+    } else {
+        // Mode clair avec couleurs de base
+        document.documentElement.style.setProperty('--background-color', 'var(--background-color-light)');
+        document.documentElement.style.setProperty('--write', 'var(--write-light)');
+        icon.src = "images/moon.png";
+        document.body.dataset.theme = "light";
 
-            if (name !== '' && email !== '' && subject !== '' && message !== '') {
-                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-                if (!emailRegex.test(email)) {
-                    errorMsg += 'L\'email saisi n\'est pas valide !<br>';
-                }
-            }
+        // Appliquer les couleurs du mode clair si elles sont choisies
+        updateColorOptions(lightModeColors, lightModeSecondaryColors);
 
+        // Définir les couleurs par défaut en mode clair
+        document.documentElement.style.setProperty('--main-color', '#FFC1C1'); // Rouge pâle
+        document.documentElement.style.setProperty('--secondary-color', '#FF9999'); // Rouge moins pâle
+    }
+};
 
-            if (errorMsg !== '') {
-                errorMessageDiv.innerHTML = `<div>${errorMsg}</div>`;
-                errorMessageDiv.style.backgroundColor = 'black';
-                errorMessageDiv.style.color = '#04f430';
-                errorMessageDiv.style.border = '2px solid #04f430';
-                errorMessageDiv.style.boxShadow = '0 0 25px #04f430';
-                errorMessageDiv.style.padding = '10px';
-                errorMessageDiv.style.borderRadius = '10px';
-                errorMessageDiv.style.fontSize = '16px';
-                errorMessageDiv.style.marginBottom = '50px';
-                errorMessageDiv.style.display = 'block';
-                event.preventDefault();
-            } else {
+// Fonction pour mettre à jour les options des sélecteurs de couleurs
+function updateColorOptions(mainColors, secondaryColors) {
+    var mainPicker = document.getElementById("color-picker-main");
+    var secondaryPicker = document.getElementById("color-picker-secondary");
 
-                errorMessageDiv.innerHTML = '';
-                errorMessageDiv.removeAttribute('style');
+    mainPicker.innerHTML = ""; // Vider les anciennes options
+    secondaryPicker.innerHTML = "";
 
+    // Ajouter les nouvelles options pour les couleurs principales
+    mainColors.forEach(color => {
+        var mainOption = document.createElement("option");
+        mainOption.value = color.value;
+        mainOption.textContent = color.text;
+        mainPicker.appendChild(mainOption);
+    });
 
-                errorMessageDiv.style.display = 'none';
-            }
-        });
-    </script>
+    // Ajouter les nouvelles options pour les couleurs secondaires
+    secondaryColors.forEach(color => {
+        var secondaryOption = document.createElement("option");
+        secondaryOption.value = color.value;
+        secondaryOption.textContent = color.text;
+        secondaryPicker.appendChild(secondaryOption);
+    });
+}
+
+// Fonction pour appliquer les couleurs personnalisées
+function applySelectedColors() {
+    var mainColor = document.getElementById("color-picker-main").value;
+    var secondaryColor = document.getElementById("color-picker-secondary").value;
+
+    document.documentElement.style.setProperty('--main-color', mainColor);
+    document.documentElement.style.setProperty('--secondary-color', secondaryColor);
+}
+
+// Fonction pour sauvegarder les couleurs dans localStorage
+function saveSelectedColors() {
+    var mainColor = document.getElementById("color-picker-main").value;
+    var secondaryColor = document.getElementById("color-picker-secondary").value;
+
+    localStorage.setItem("mainColor", mainColor);
+    localStorage.setItem("secondaryColor", secondaryColor);
+}
+
+// Charger les couleurs sauvegardées dans localStorage
+function loadStoredColors() {
+    var mainColor = localStorage.getItem("mainColor");
+    var secondaryColor = localStorage.getItem("secondaryColor");
+
+    if (mainColor && secondaryColor) {
+        document.getElementById("color-picker-main").value = mainColor;
+        document.getElementById("color-picker-secondary").value = secondaryColor;
+        applySelectedColors();
+    }
+}
+
+// Ajouter des événements pour appliquer et sauvegarder les couleurs
+document.getElementById("color-picker-main").addEventListener("change", function () {
+    applySelectedColors();
+    saveSelectedColors();
+});
+
+document.getElementById("color-picker-secondary").addEventListener("change", function () {
+    applySelectedColors();
+    saveSelectedColors();
+});
+
+// Afficher ou cacher le menu déroulant
+dropdownToggle.onclick = function () {
+    dropdownMenu.classList.toggle("show");
+};
+
+// Charger les couleurs au démarrage et initialiser les options
+loadStoredColors();
+updateColorOptions(darkModeColors, darkModeColors);
+
+</script>
 </body>
 
 </html>
