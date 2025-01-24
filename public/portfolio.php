@@ -21,6 +21,23 @@
 
 <body>
     <?php require_once(__DIR__ . '/header.php'); ?>
+    <div class="page-mode">
+        <img src="images/sun.png" alt="sun" id="icon" class="d-inline-block ms-3" style="cursor: pointer;">
+
+
+        <div class="dropdown-container">
+            <button class="dropdown-button" id="dropdownButton">
+            <i class='bx bxs-palette' ></i>
+            </button>
+            <ul class="dropdown-menu" id="dropdownMenu" style="display: none;">
+                <li>
+                    <select id="color-picker-main" class="form-select">
+
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </div>
 
     <section class="home" id="home">
         <div class="home-content">
@@ -402,142 +419,128 @@
             }
         });
     </script>
-    <script>
-   var icon = document.getElementById("icon");
-var dropdownToggle = document.getElementById("dropdown-toggle");
-var dropdownMenu = document.getElementById("dropdown-menu");
+   <script>
+    // Liste des couleurs principales et leurs couleurs secondaires associées pour chaque mode
+    var darkModeColors = {
+        "#04F430": { name: "Vert", secondary: "#007F1E" }, // Vert -> Vert foncé
+        "#e30a0a": { name: "Rouge", secondary: "#A00000" }, // Rouge -> Rouge foncé
+        "#08f5f5": { name: "Bleu", secondary: "#007B7B" }, // Bleu -> Bleu foncé
+        "#fbff18": { name: "Jaune", secondary: "#C0B000" } // Jaune -> Jaune foncé
+    };
 
-// Listes de couleurs principales et secondaires pour chaque mode
-var darkModeColors = [
-    { value: "#04F430", text: "Vert" },
-    { value: "#FF7043", text: "Rouge" },
-    { value: "#1E90FF", text: "Bleu" },
-    { value: "#FFFF00", text: "Jaune" }
-];
+    var lightModeColors = {
+        "#F28C8C": { name: "Rouge pâle", secondary: "#D16F6F" }, // Rouge pâle -> Rouge foncé
+        "#FFD700": { name: "Jaune pâle", secondary: "#E6B800" }, // Jaune pâle -> Jaune foncé
+        "#ADD8E6": { name: "Bleu clair", secondary: "#6495ED" }, // Bleu clair -> Bleu foncé
+        "#D8BFD8": { name: "Violet pâle", secondary: "#B28AB5" } // Violet pâle -> Violet foncé
+    };
 
-var lightModeColors = [
-    { value: "#FFC1C1", text: "Rouge pâle" },
-    { value: "#FFFACD", text: "Jaune pâle" },
-    { value: "#E6E6FA", text: "Violet pâle" },
-    { value: "#ADD8E6", text: "Bleu clair" }
-];
+    // Fonction pour changer les couleurs en fonction du mode
+    var icon = document.getElementById("icon");
 
-var lightModeSecondaryColors = [
-    { value: "#FF9999", text: "Rouge moins pâle" },
-    { value: "#FFE066", text: "Jaune moins pâle" },
-    { value: "#D8BFD8", text: "Violet moins pâle" },
-    { value: "#87CEEB", text: "Bleu ciel" }
-];
+    icon.onclick = function() {
+        var isLightMode = document.body.dataset.theme === "light";
 
-// Fonction pour basculer entre les modes sombre et clair
-icon.onclick = function () {
-    var isLightMode = document.body.dataset.theme === "light";
+        if (isLightMode) {
+            // Passer en mode sombre
+            document.documentElement.style.setProperty('--background-color', 'black');
+            document.documentElement.style.setProperty('--write', '#FFFFFF');
+            document.body.dataset.theme = "dark";
+            icon.src = "images/sun.png";
+            updateColorOptions(darkModeColors); // Options pour le mode sombre
+        } else {
+            // Passer en mode clair
+            document.documentElement.style.setProperty('--background-color', '#E0F7FA');
+            document.documentElement.style.setProperty('--write', '#000000');
+            document.body.dataset.theme = "light";
+            icon.src = "images/moon.png";
+            updateColorOptions(lightModeColors); // Options pour le mode clair
+        }
+    };
 
-    if (isLightMode) {
-        // Mode sombre
-        document.documentElement.style.setProperty('--background-color', 'var(--background-color-dark)');
-        document.documentElement.style.setProperty('--write', 'var(--write-dark)');
-        icon.src = "images/sun.png";
-        document.body.dataset.theme = "dark";
+    // Mise à jour des options de couleurs dans le menu déroulant
+    function updateColorOptions(colorOptions) {
+        var mainPicker = document.getElementById("color-picker-main");
 
-        // Réinitialiser les couleurs par défaut en mode sombre
-        document.documentElement.style.setProperty('--main-color', '#04F430'); // Vert pour le mode sombre
-        document.documentElement.style.setProperty('--secondary-color', '#14CE36'); // Vert clair pour le mode sombre
+        mainPicker.innerHTML = ""; // Vider les options existantes
 
-        // Mettre à jour les options de couleur en mode sombre
-        updateColorOptions(darkModeColors, darkModeColors);
-    } else {
-        // Mode clair avec couleurs de base
-        document.documentElement.style.setProperty('--background-color', 'var(--background-color-light)');
-        document.documentElement.style.setProperty('--write', 'var(--write-light)');
-        icon.src = "images/moon.png";
-        document.body.dataset.theme = "light";
+        // Ajouter les options de couleurs principales avec des noms
+        for (var color in colorOptions) {
+            var mainOption = document.createElement("option");
+            mainOption.value = color;
+            mainOption.textContent = colorOptions[color].name; // Afficher le nom de la couleur
+            mainPicker.appendChild(mainOption);
+        }
 
-        // Appliquer les couleurs du mode clair si elles sont choisies
-        updateColorOptions(lightModeColors, lightModeSecondaryColors);
-
-        // Définir les couleurs par défaut en mode clair
-        document.documentElement.style.setProperty('--main-color', '#FFC1C1'); // Rouge pâle
-        document.documentElement.style.setProperty('--secondary-color', '#FF9999'); // Rouge moins pâle
-    }
-};
-
-// Fonction pour mettre à jour les options des sélecteurs de couleurs
-function updateColorOptions(mainColors, secondaryColors) {
-    var mainPicker = document.getElementById("color-picker-main");
-    var secondaryPicker = document.getElementById("color-picker-secondary");
-
-    mainPicker.innerHTML = ""; // Vider les anciennes options
-    secondaryPicker.innerHTML = "";
-
-    // Ajouter les nouvelles options pour les couleurs principales
-    mainColors.forEach(color => {
-        var mainOption = document.createElement("option");
-        mainOption.value = color.value;
-        mainOption.textContent = color.text;
-        mainPicker.appendChild(mainOption);
-    });
-
-    // Ajouter les nouvelles options pour les couleurs secondaires
-    secondaryColors.forEach(color => {
-        var secondaryOption = document.createElement("option");
-        secondaryOption.value = color.value;
-        secondaryOption.textContent = color.text;
-        secondaryPicker.appendChild(secondaryOption);
-    });
-}
-
-// Fonction pour appliquer les couleurs personnalisées
-function applySelectedColors() {
-    var mainColor = document.getElementById("color-picker-main").value;
-    var secondaryColor = document.getElementById("color-picker-secondary").value;
-
-    document.documentElement.style.setProperty('--main-color', mainColor);
-    document.documentElement.style.setProperty('--secondary-color', secondaryColor);
-}
-
-// Fonction pour sauvegarder les couleurs dans localStorage
-function saveSelectedColors() {
-    var mainColor = document.getElementById("color-picker-main").value;
-    var secondaryColor = document.getElementById("color-picker-secondary").value;
-
-    localStorage.setItem("mainColor", mainColor);
-    localStorage.setItem("secondaryColor", secondaryColor);
-}
-
-// Charger les couleurs sauvegardées dans localStorage
-function loadStoredColors() {
-    var mainColor = localStorage.getItem("mainColor");
-    var secondaryColor = localStorage.getItem("secondaryColor");
-
-    if (mainColor && secondaryColor) {
-        document.getElementById("color-picker-main").value = mainColor;
-        document.getElementById("color-picker-secondary").value = secondaryColor;
+        // Appliquer la couleur principale et secondaire correspondante
         applySelectedColors();
     }
-}
 
-// Ajouter des événements pour appliquer et sauvegarder les couleurs
-document.getElementById("color-picker-main").addEventListener("change", function () {
-    applySelectedColors();
-    saveSelectedColors();
-});
+    // Appliquer la couleur principale et la couleur secondaire correspondante
+    function applySelectedColors() {
+        var mainColor = document.getElementById("color-picker-main").value;
 
-document.getElementById("color-picker-secondary").addEventListener("change", function () {
-    applySelectedColors();
-    saveSelectedColors();
-});
+        // Appliquer la couleur principale sélectionnée
+        document.documentElement.style.setProperty('--main-color', mainColor);
 
-// Afficher ou cacher le menu déroulant
-dropdownToggle.onclick = function () {
-    dropdownMenu.classList.toggle("show");
-};
+        // Appliquer la couleur secondaire associée en fonction du mode
+        var secondaryColor = getSecondaryColor(mainColor);
+        document.documentElement.style.setProperty('--secondary-color', secondaryColor);
+    }
 
-// Charger les couleurs au démarrage et initialiser les options
-loadStoredColors();
-updateColorOptions(darkModeColors, darkModeColors);
+    // Obtenir la couleur secondaire associée à la couleur principale sélectionnée
+    function getSecondaryColor(mainColor) {
+        if (document.body.dataset.theme === "light") {
+            return lightModeColors[mainColor] ? lightModeColors[mainColor].secondary : "#000000"; // Défaut à noir si la couleur n'est pas trouvée
+        } else {
+            return darkModeColors[mainColor] ? darkModeColors[mainColor].secondary : "#000000"; // Défaut à noir si la couleur n'est pas trouvée
+        }
+    }
 
+    // Sauvegarder la couleur principale sélectionnée dans le localStorage
+    function saveSelectedColor() {
+        var mainColor = document.getElementById("color-picker-main").value;
+        localStorage.setItem("mainColor", mainColor);
+    }
+
+    // Charger la couleur principale sauvegardée
+    function loadStoredColor() {
+        var mainColor = localStorage.getItem("mainColor");
+
+        if (mainColor) {
+            document.getElementById("color-picker-main").value = mainColor;
+            applySelectedColors();
+        }
+    }
+
+    // Event listener pour les changements de couleur principale
+    document.getElementById("color-picker-main").addEventListener("change", function() {
+        applySelectedColors();
+        saveSelectedColor();
+        closeDropdownMenu(); // Fermer le menu après sélection
+    });
+
+    // Fonction pour fermer le menu déroulant
+    function closeDropdownMenu() {
+        var dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.style.display = "none"; // Masquer le menu
+    }
+
+    // Charger la couleur principale sauvegardée
+    loadStoredColor();
+
+    // Initialisation des options pour le mode actuel
+    var initialModeColors = document.body.dataset.theme === "light" ? lightModeColors : darkModeColors;
+    updateColorOptions(initialModeColors);
+
+    // Afficher ou masquer le menu déroulant au clic du bouton
+    document.getElementById("dropdownButton").addEventListener("click", function() {
+        var dropdownMenu = document.getElementById("dropdownMenu");
+        var isVisible = dropdownMenu.style.display === "block";
+        dropdownMenu.style.display = isVisible ? "none" : "block";
+    });
 </script>
+
 </body>
 
 </html>
