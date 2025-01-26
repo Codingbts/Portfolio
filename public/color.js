@@ -67,6 +67,9 @@ function applySelectedColors() {
     // Appliquer la couleur principale et secondaire
     document.documentElement.style.setProperty("--main-color", mainColor);
     document.documentElement.style.setProperty("--secondary-color", getSecondaryColor(mainColor));
+
+    // Mettre à jour les images en fonction de la couleur choisie
+    updateImagesBasedOnColor(mainColor);  // Appel à la fonction de changement d'image
 }
 
 // Obtenir la couleur secondaire pour une couleur principale donnée
@@ -93,6 +96,61 @@ function applyStoredColor(mode) {
         mainPicker.value = Object.keys(colors)[0];
     }
     applySelectedColors();
+}
+
+
+function updateImagesBasedOnColor(color) {
+    
+    const images = {
+        "#04F430": {
+            contactImg: "images/Contact us-bro.svg",
+            visionaryImg: "images/Visionary technology-bro.svg"
+        },
+        "#e30a0a": {
+            contactImg: "images/Contact us-bro-red.svg",
+            visionaryImg: "images/Visionary technology-bro-rouge.svg"
+        },
+        "#08f5f5": {
+            contactImg: "images/Contact us-bro-blue.svg",
+            visionaryImg: "images/Visionary technology-bro-blue.svg"
+        },
+        "#a252a3": {
+            contactImg: "images/Contact us-bro-violet.svg",
+            visionaryImg: "images/Visionary technology-bro-violet.svg"
+        },
+        "#ff8400": {
+            contactImg: "images/Contact us-bro-orange.svg",
+            visionaryImg: "images/Visionary technology-bro-orange.svg"
+        },
+        "#F28C8C": {
+            contactImg: "images/Contact us-bro-light.svg",
+            visionaryImg: "images/Visionary technology-bro-light.svg"
+        },
+        "#F48FB1": {
+            contactImg: "images/Contact us-bro-pink.svg",
+            visionaryImg: "images/Visionary technology-bro-pink.svg"
+        },
+        "#ADD8E6": {
+            contactImg: "images/Contact us-bro-light-blue.svg",
+            visionaryImg: "images/Visionary technology-bro-light-blue.svg"
+        },
+        "#FF6F61": {
+            contactImg: "images/Contact us-bro-yellow.svg",
+            visionaryImg: "images/Visionary technology-bro-yellow.svg"
+        }
+    };
+
+    // Récupérer les images par la couleur sélectionnée
+    const selectedImages = images[color];
+
+    // Mettre à jour les images si elles existent dans l'objet
+    if (selectedImages) {
+        const contactImg = document.getElementById("contact-img");
+        const visionaryImg = document.getElementById("visionary-svg"); // ID correct ici
+
+        if (contactImg) contactImg.src = selectedImages.contactImg;
+        if (visionaryImg) visionaryImg.src = selectedImages.visionaryImg;
+    }
 }
 
 // Gestion des événements
@@ -133,50 +191,3 @@ function closeDropdownMenu() {
         localStorage.setItem("theme", initialMode);
     }
 })();
-
-// Liste des couleurs et des images associées
-const colorImages = {
-    "#04F430": {
-        contact: "images/Contact us-bro.svg",
-        visionary: "images/Visionary technology-bro.svg"
-    },
-    "#e30a0a": {
-        contact: "images/Contact us-bro-red.svg",
-        visionary: "images/images/Visionary technology-bro-rouge.svg"
-    },
-    "#08f5f5": {
-        contact: "images/Contact us-bro-blue.svg",
-        visionary: "images/Visionary technology-bro-blue.svg"
-    },
-    "#a252a3": {
-        contact: "images/Contact us-bro-violet.svg",
-        visionary: "images/Visionary technology-bro-violet.svg"
-    },
-    "#ff8400": {
-        contact: "images/Contact us-bro-orange.svg",
-        visionary: "images/Visionary technology-bro-orange.svg"
-    }
-};
-
-// Fonction pour changer les images en fonction de la couleur choisie
-function changeImageBasedOnColor(color) {
-    const contactImage = document.getElementById("contact-svg");
-    const visionaryImage = document.getElementById("visionary-svg");
-
-    // Vérifie si la couleur existe dans l'objet colorImages
-    if (colorImages[color]) {
-        // Change les images en fonction de la couleur
-        contactImage.src = colorImages[color].contact;
-        visionaryImage.src = colorImages[color].visionary;
-    }
-}
-
-// Sélectionner le dropdown
-const colorDropdown = document.getElementById("color-dropdown");
-
-// Écouter le changement de couleur dans le dropdown
-colorDropdown.addEventListener("change", () => {
-    const selectedColor = colorDropdown.value;
-    // Appliquer le changement d'image en fonction de la couleur sélectionnée
-    changeImageBasedOnColor(selectedColor);
-});

@@ -385,7 +385,7 @@
                 <div class="popup-content">
                     <h1>Votre message a bien été envoyé.</h1>
                     <h2>Merci d'avoir pris le temps de me contacter !</h2>
-                    <img id="contact-svg" src="images/Contact us-bro.svg" alt="Contact-img" id="contact-svg">
+                    <img src="images/Contact us-bro.svg" alt="Contact-img" id="contact-svg">
                     <a href="portfolio.php">Retourner à mon portfolio</a>
                 </div>
             </div>

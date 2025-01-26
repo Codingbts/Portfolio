@@ -1014,3 +1014,43 @@ span{
     
 }
 
+
+.color-green .contact {
+    background-image: url("images/Contact us-bro.svg");
+}
+
+.color-green .visionary {
+    background-image: url("images/Visionary technology-bro.svg");
+}
+
+.color-red .contact {
+    background-image: url("images/Contact us-bro-red.svg");
+}
+
+.color-red .visionary {
+    background-image: url("images/Visionary technology-bro-rouge.svg");
+}
+
+.color-blue .contact {
+    background-image: url("images/Contact us-bro-blue.svg");
+}
+
+.color-blue .visionary {
+    background-image: url("images/Visionary technology-bro-blue.svg");
+}
+
+.color-violet .contact {
+    background-image: url("images/Contact us-bro-violet.svg");
+}
+
+.color-violet .visionary {
+    background-image: url("images/Visionary technology-bro-violet.svg");
+}
+
+.color-orange .contact {
+    background-image: url("images/Contact us-bro-orange.svg");
+}
+
+.color-orange .visionary {
+    background-image: url("images/Visionary technology-bro-orange.svg");
+}
