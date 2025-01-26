@@ -46,7 +46,7 @@
     <div class="row">
 
         <section class="intro" id="apropos">
-            <img id="visionary-svg" src="images/Visionary technology-bro.svg" alt="illu-intro">
+            <img id="visionary-img" src="images/Visionary technology-bro.svg" alt="illu-intro">
             <div class="col-md-12 d-flex flex-direction-row">
                 <div class="carte">
                     <div class="card card-ap">
@@ -243,7 +243,7 @@
                                 <p>Création d'un site vitrine Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint qui fugiat libero nulla dolorum aliquam beatae voluptatem molestias non at.</p>
                     </div>
                 </div>
-                <img src="images/Programming-bro.svg" alt="Illustration experience">
+                <img id="programming-img" src="images/Programming-bro.svg" alt="Illustration experience">
 
             </div>
         </section>
@@ -343,7 +343,7 @@
                         J'ai décidé d'effectuer ma veille technologique sur deux domaines qui me passionne. Ces domaines sont <span>l'intelligence
                             artificielle</span> et la <span>robotique</span>.
                     </p>
-                    <img src="images/Artificial intelligence-bro.svg" alt="Robot-IA illu">
+                    <img id="ia-img" src="images/Artificial intelligence-bro.svg" alt="Robot-IA illu">
                 </div>
                 <div class="IA">
                     <h3><span>Intelligence artificielle</span></h3>
@@ -385,7 +385,7 @@
                 <div class="popup-content">
                     <h1>Votre message a bien été envoyé.</h1>
                     <h2>Merci d'avoir pris le temps de me contacter !</h2>
-                    <img src="images/Contact us-bro.svg" alt="Contact-img" id="contact-svg">
+                    <img src="images/Contact us-bro.svg" alt="Contact-img" id="contact-img">
                     <a href="portfolio.php">Retourner à mon portfolio</a>
                 </div>
             </div>
