@@ -60,6 +60,7 @@ body{
     background-color: var(--background-color);
     gap: 3rem;
     box-shadow: 0 0 25 var(--main-color);
+    z-index: 999;
 }
 
 body[data-theme="light"] .header {
@@ -912,7 +913,7 @@ span{
     font-size: large;
     margin: 10px 0;
 }
-  /* Styles for the popup */
+ 
   #popup-overlay {
     position: fixed;
     top: 0;
@@ -943,15 +944,17 @@ span{
 }
 
 .popup-content h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--main-color);
     margin-bottom: 15px;
+    font-weight: 800;
 }
 
 .popup-content h2 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 20px;
     color: var(--write);
+    font-weight: 800;
 }
 
 .popup-content img {
@@ -967,8 +970,8 @@ span{
     background-color: var(--main-color);
     color: var(--write);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 2rem;
 }
 
 .popup-content a:hover {

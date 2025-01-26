@@ -46,7 +46,7 @@
     <div class="row">
 
         <section class="intro" id="apropos">
-            <img src="images/Visionary technology-bro.svg" alt="illu-intro">
+            <img id="visionary-svg" src="images/Visionary technology-bro.svg" alt="illu-intro">
             <div class="col-md-12 d-flex flex-direction-row">
                 <div class="carte">
                     <div class="card card-ap">
@@ -385,7 +385,7 @@
                 <div class="popup-content">
                     <h1>Votre message a bien été envoyé.</h1>
                     <h2>Merci d'avoir pris le temps de me contacter !</h2>
-                    <img src="images/Contact us-bro.svg" alt="Contact-img">
+                    <img id="contact-svg" src="images/Contact us-bro.svg" alt="Contact-img" id="contact-svg">
                     <a href="portfolio.php">Retourner à mon portfolio</a>
                 </div>
             </div>

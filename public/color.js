@@ -3,14 +3,15 @@ const darkModeColors = {
     "#04F430": { name: "Vert", secondary: "#007F1E" },
     "#e30a0a": { name: "Rouge", secondary: "#A00000" },
     "#08f5f5": { name: "Bleu", secondary: "#007B7B" },
-    "#fbff18": { name: "Jaune", secondary: "#C0B000" }
+    "#a252a3": { name: "Violet", secondary: "#7c007e" },
+    "#ff8400": { name: "Orange", secondary: "#bd6200" },
 };
 
 const lightModeColors = {
     "#F28C8C": { name: "Rouge pâle", secondary: "#D16F6F" },
-    "#FFD700": { name: "Jaune pâle", secondary: "#E6B800" },
+    "#F48FB1": { name: "Rose", secondary: "#F06292" },
     "#ADD8E6": { name: "Bleu clair", secondary: "#6495ED" },
-    "#D8BFD8": { name: "Violet pâle", secondary: "#B28AB5" }
+    "#FF6F61": { name: "Jaune", secondary: "#FBC02D" }
 };
 
 // Initialisation : Définir les variables
@@ -41,10 +42,10 @@ icon.onclick = function () {
 // Définir le thème (light ou dark)
 function setTheme(mode) {
     const isDark = mode === "dark";
-    document.documentElement.style.setProperty("--background-color", isDark ? "black" : "#E0F7FA");
+    document.documentElement.style.setProperty("--background-color", isDark ? "black" : "#EFEFEF");
     document.documentElement.style.setProperty("--write", isDark ? "#FFFFFF" : "#000000");
     document.body.dataset.theme = mode;
-    icon.src = isDark ? "images/sun.png" : "images/moon.png";
+    icon.src = isDark ? "images/sun.svg" : "images/moon.svg";
 }
 
 // Mettre à jour les options du sélecteur de couleurs
@@ -132,3 +133,50 @@ function closeDropdownMenu() {
         localStorage.setItem("theme", initialMode);
     }
 })();
+
+// Liste des couleurs et des images associées
+const colorImages = {
+    "#04F430": {
+        contact: "images/Contact us-bro.svg",
+        visionary: "images/Visionary technology-bro.svg"
+    },
+    "#e30a0a": {
+        contact: "images/Contact us-bro-red.svg",
+        visionary: "images/images/Visionary technology-bro-rouge.svg"
+    },
+    "#08f5f5": {
+        contact: "images/Contact us-bro-blue.svg",
+        visionary: "images/Visionary technology-bro-blue.svg"
+    },
+    "#a252a3": {
+        contact: "images/Contact us-bro-violet.svg",
+        visionary: "images/Visionary technology-bro-violet.svg"
+    },
+    "#ff8400": {
+        contact: "images/Contact us-bro-orange.svg",
+        visionary: "images/Visionary technology-bro-orange.svg"
+    }
+};
+
+// Fonction pour changer les images en fonction de la couleur choisie
+function changeImageBasedOnColor(color) {
+    const contactImage = document.getElementById("contact-svg");
+    const visionaryImage = document.getElementById("visionary-svg");
+
+    // Vérifie si la couleur existe dans l'objet colorImages
+    if (colorImages[color]) {
+        // Change les images en fonction de la couleur
+        contactImage.src = colorImages[color].contact;
+        visionaryImage.src = colorImages[color].visionary;
+    }
+}
+
+// Sélectionner le dropdown
+const colorDropdown = document.getElementById("color-dropdown");
+
+// Écouter le changement de couleur dans le dropdown
+colorDropdown.addEventListener("change", () => {
+    const selectedColor = colorDropdown.value;
+    // Appliquer le changement d'image en fonction de la couleur sélectionnée
+    changeImageBasedOnColor(selectedColor);
+});
