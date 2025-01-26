@@ -438,7 +438,9 @@ span{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 0; 
+    margin-top: -100px; 
+    height: 150vh;
+    margin-bottom: 150px;
 }
 
 .intro img{
@@ -455,8 +457,10 @@ span{
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 100px;
     margin-left: 5%;
     margin-right: 5%;
+    right: 30px;
 
 }
 
@@ -473,6 +477,19 @@ span{
 
 .card-ap h2 {
     font-size: 25px;
+}
+
+.liens-site{
+    color: var(--write);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.liens-site:hover{
+    color: var(--write);
+    text-decoration: underline;
+
+
 }
 
 .glow{
@@ -702,6 +719,35 @@ span{
     font-size: 15px;
 }
 
+#error-message{
+    display: none; /* Cacher par défaut */
+    background-color: var(--background-color);
+    border: 2px solid var(--main-color);
+    box-shadow: 0 0 30px var(--main-color);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+    font-size: 1.5rem;
+
+}
+
+#error-message.visible {
+    display: block; /* Rendre visible */
+    animation: fadeIn 0.3s ease-in-out; /* Animation pour l'apparition */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Apparition depuis le haut */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .form-contact{
     display: flex;
     align-items: center;
@@ -780,10 +826,10 @@ span{
 
 .container-project {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 5rem; 
     justify-items: center;
-    padding: 1rem;
+    padding: 5rem;
 }
 
 .project-card{
@@ -866,66 +912,70 @@ span{
     font-size: large;
     margin: 10px 0;
 }
-
-
-.container{
+  /* Styles for the popup */
+  #popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-color);
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    width: 200vh;
-    height: 135vh;
-    background-color: var(--background-color);
+    display: none; 
 }
 
+#popup-overlay.open {
+    display: flex; 
+}
 
-.container .msgconf h1{
-    font-size: 40px;
-    font-weight: 800;
+.popup-content {
+    background-color: var(--background-color);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0px 60px var(--main-color);
+    border: 4px solid var(--main-color);
+}
+
+.popup-content h1 {
+    font-size: 2rem;
     color: var(--main-color);
+    margin-bottom: 15px;
 }
 
-.container .msgconf h2{
-    font-size: 20px;
-    font-weight: 800;
+.popup-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
     color: var(--write);
 }
 
-.container .container-bas{
-    width: 100vh;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
+.popup-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
 }
 
-.container .container-bas img{
-    width: 150%;
-    height: 90%;
-    position: relative;
-}
-
-.container .container-bas a{
-    border: 2px solid var(--main-color);
-    background-color: var(--background-color);
-    color: var(--write);
-    border-radius: 15px;
-    box-shadow: 0 0 15px var(--main-color);
-    font-size: 20px;
-    padding: 15px;
-    transition: 0.3s ease-in-out;
-}
-
-.container a:hover{
-    border: 2px solid var(--main-color);
+.popup-content a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
     background-color: var(--main-color);
-    color: var(--background-color);
-    border-radius: 15px;
-    box-shadow: 0 0 15px var(--main-color)
-                0 0 25px var(--main-color);
-    transform: scale(1.1);
+    color: var(--write);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.popup-content a:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
 
 .veille-container{
     margin-left: 10vh;

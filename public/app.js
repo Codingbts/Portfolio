@@ -27,3 +27,7 @@ cards.forEach(el => {
         el.children[1].style.transform = "rotateX(0) rotateY(0)"
     })
 });
+
+
+
+

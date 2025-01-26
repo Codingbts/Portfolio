@@ -21,23 +21,7 @@
 
 <body>
     <?php require_once(__DIR__ . '/header.php'); ?>
-    <div class="page-mode">
-        <img src="images/sun.png" alt="sun" id="icon" class="d-inline-block ms-3" style="cursor: pointer;">
-
-
-        <div class="dropdown-container">
-            <button class="dropdown-button" id="dropdownButton">
-            <i class='bx bxs-palette' ></i>
-            </button>
-            <ul class="dropdown-menu" id="dropdownMenu" style="display: none;">
-                <li>
-                    <select id="color-picker-main" class="form-select">
-
-                    </select>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php require_once(__DIR__ . '/theme-color.php') ?>
 
     <section class="home" id="home">
         <div class="home-content">
@@ -66,7 +50,7 @@
             <div class="col-md-12 d-flex flex-direction-row">
                 <div class="carte">
                     <div class="card card-ap">
-                        <h2>A propos de <span style="color: black;">moi</span></h2>
+                        <h2>A propos de <span style="color: black;">moi</span></h2></br>
                         <p>
                             Bonjour, je vous souhaite la bienvenue dans mon portfolio.
                             Je me présente, je m'appelle Saad Mohamadi, j'ai 22 ans, et je suis actuellement
@@ -81,14 +65,21 @@
 
                 <div class="carte">
                     <div class="card card-ap">
-                        <h2>Le BTS <span style="color: black;">SIO SLAM</span></h2>
+                        <h2>Le BTS <span style="color: black;">SIO</span></h2></br>
                         <p>
-                            Bonjour, je vous souhaite la bienvenue dans mon portfolio.
-                            Je me présente, je m'appelle Saad Mohamadi, j'ai 22 ans, et je suis actuellement
-                            en 2ème année de BTS services informatiques
-                            aux organisations option B solutions
-                            logicielles et applications métiers (BTS SIO SLAM). Dans ce site, vous y trouverez mon parcours académique,
-                            mes Compétences ainsi que mes projets. Je vous souhaite un excellent voyage dans mon monde !
+                            <span style="color: black;">Le Brevet de Technicien Supérieur (BTS) SIO (Services Informatiques aux Organisations)</span>
+                            est un diplôme de l'enseignement supérieur qui se prépare en deux ans après l'obtention du baccalauréat.
+                            Ce cursus permet aux étudiants d'acquérir des compétences solides dans le domaine de l'informatique,
+                            en choisissant l'une des deux spécialités proposées :</br>
+
+                            </br>SLAM (Solutions Logicielles et Applications Métier) : L'option SLAM se concentre sur le développement d'applications
+                            informatiques, la programmation, la gestion de bases de données et la conception de logiciels adaptés
+                            aux besoins des entreprises.</br>
+                            SISR (Solutions d'Infrastructure, Systèmes et Réseaux): L'option SISR forme les étudiants à la gestion et à
+                            l’administration des infrastructures réseau, des systèmes informatiques, ainsi qu'à la sécurité des
+                            données.</br>
+
+                            </br>Pour plus d'information, je vous mets le lien de l'Onisep pour ma spécialité, le BTS SIO SLAM : <a class="liens-site" target="_blank" href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers">Onisep - BTS SIO SLAM</a>
                         </p>
                         <div class="glow"></div>
                     </div>
@@ -338,31 +329,31 @@
         <section id="veille">
             <h2 class="heading">VEILLE TECHNOLOGIQUE</h2>
             <div class="veille-container">
-                <h3>Qu'est ce que la veille technologique ?</h3>
+                <h3>Qu'est ce que la <span>veille technologique ?</span></h3>
                 <div class="intro-veille">
 
                     <p>
-                        La veille technologique est un processus qui permet d'être à jour sur les innovations et les tendances
+                        La <span>veille technologique</span> est un processus qui permet d'être à jour sur les innovations et les tendances
                         dans le secteur des technologies. Il est très important d'effectuer fréquemment une veille technologique
                         pour ne pas être dépassé par les changements qui ont lieu dans une industrie suite à des innovations ou à des
                         changements syntaxique dans un langage de programmation. J'utilise différents moyens pour effectuer ma veille
                         technologique. En effet, j'utilise google alerts pour être quotidiennement au courant des nouvelles publications
                         sur le net en rapport avec l'intelligence artificielle et la robotique. Je suis par ailleurs abonné à plusieurs newlestter pour être tenu au courant des nouveautés. De plus, je suis abonné à des chaines YouTube
                         qui parle de ses domaines.
-                        J'ai décidé d'effectuer ma veille technologique sur deux domaines qui me passionne. Ces domaines sont l'intelligence
-                        artificielle et la robotique.
+                        J'ai décidé d'effectuer ma veille technologique sur deux domaines qui me passionne. Ces domaines sont <span>l'intelligence
+                            artificielle</span> et la <span>robotique</span>.
                     </p>
                     <img src="images/Artificial intelligence-bro.svg" alt="Robot-IA illu">
                 </div>
                 <div class="IA">
-                    <h3>Intelligence artificielle</h3>
+                    <h3><span>Intelligence artificielle</span></h3>
                     <div class="dev-IA">
                         <p>J'ai toujours été fasciné par l'Intelligence Artificielle. </p>
                     </div>
                 </div>
 
                 <div class="robotique">
-                    <h3>Robotique</h3>
+                    <h3><span>Robotique</span></h3>
                 </div>
             </div>
         </section>
@@ -384,9 +375,19 @@
                     </div>
                     <div class="input-group3">
                         <textarea name="message" id="message" placeholder="Message" autocomplete="off"></textarea>
-                        <button class="btn btn-primary" id="btn-envoie" type="submit">Envoyer</button>
+                        <button class="btn btn-primary" id="btn-envoie" type="submit" onclick="togglePopup">Envoyer</button>
                     </div>
                 </form>
+            </div>
+
+
+            <div id="popup-overlay">
+                <div class="popup-content">
+                    <h1>Votre message a bien été envoyé.</h1>
+                    <h2>Merci d'avoir pris le temps de me contacter !</h2>
+                    <img src="images/Contact us-bro.svg" alt="Contact-img">
+                    <a href="portfolio.php">Retourner à mon portfolio</a>
+                </div>
             </div>
         </section>
     </div>
@@ -394,170 +395,22 @@
     <?php require_once(__DIR__ . '/footer.php') ?>
     <script src="app.js"></script>
     <script src="card.js"></script>
+    <script src="titre.js"></script>
+    <script src="color.js"></script>
+    <script src="error.js"></script>
+
     <script>
-        var typed = new Typed(".auto-type", {
-            strings: [
-                'suis étudiant en 2ème année de <span> BTS SIO SLAM </span>',
-                'vous souhaite la bienvenue dans <span>mon site !</span>'
-            ],
-            typeSpeed: 100,
-            backSpeed: 50,
-            backDelay: 1500,
-            startDelay: 1000,
-            loop: true,
-            loopCount: Infinity,
-            showCursor: true,
-            onStart: function(self) {
+        function togglePopup() {
+            const popup = document.querySelector("#popup-overlay");
+            popup.classList.toggle("open");
+        }
 
-                self.options.backDelay = 1500;
-            },
-            onComplete: function(self) {
-
-                setTimeout(function() {
-                    self.reset();
-                }, 4200);
-            }
-        });
+        <?php if ($showPopup): ?>
+            document.addEventListener("DOMContentLoaded", () => {
+                togglePopup(); // Show popup on load if email sent successfully
+            });
+        <?php endif; ?>
     </script>
-   <script>
-    // Liste des couleurs principales et leurs couleurs secondaires associées pour chaque mode
-    var darkModeColors = {
-        "#04F430": { name: "Vert", secondary: "#007F1E" }, // Vert -> Vert foncé
-        "#e30a0a": { name: "Rouge", secondary: "#A00000" }, // Rouge -> Rouge foncé
-        "#08f5f5": { name: "Bleu", secondary: "#007B7B" }, // Bleu -> Bleu foncé
-        "#fbff18": { name: "Jaune", secondary: "#C0B000" } // Jaune -> Jaune foncé
-    };
-
-    var lightModeColors = {
-        "#F28C8C": { name: "Rouge pâle", secondary: "#D16F6F" }, // Rouge pâle -> Rouge foncé
-        "#FFD700": { name: "Jaune pâle", secondary: "#E6B800" }, // Jaune pâle -> Jaune foncé
-        "#ADD8E6": { name: "Bleu clair", secondary: "#6495ED" }, // Bleu clair -> Bleu foncé
-        "#D8BFD8": { name: "Violet pâle", secondary: "#B28AB5" } // Violet pâle -> Violet foncé
-    };
-
-    // Fonction pour changer les couleurs en fonction du mode
-    var icon = document.getElementById("icon");
-
-    icon.onclick = function() {
-        var isLightMode = document.body.dataset.theme === "light";
-
-        if (isLightMode) {
-            // Passer en mode sombre
-            document.documentElement.style.setProperty('--background-color', 'black');
-            document.documentElement.style.setProperty('--write', '#FFFFFF');
-            document.body.dataset.theme = "dark";
-            icon.src = "images/sun.png";
-            updateColorOptions(darkModeColors); // Options pour le mode sombre
-            applyStoredColor("dark"); // Appliquer la couleur sauvegardée en mode sombre
-        } else {
-            // Passer en mode clair
-            document.documentElement.style.setProperty('--background-color', '#E0F7FA');
-            document.documentElement.style.setProperty('--write', '#000000');
-            document.body.dataset.theme = "light";
-            icon.src = "images/moon.png";
-            updateColorOptions(lightModeColors); // Options pour le mode clair
-            applyStoredColor("light"); // Appliquer la couleur sauvegardée en mode clair
-        }
-    };
-
-    // Mise à jour des options de couleurs dans le menu déroulant
-    function updateColorOptions(colorOptions) {
-        var mainPicker = document.getElementById("color-picker-main");
-
-        mainPicker.innerHTML = ""; // Vider les options existantes
-
-        // Ajouter les options de couleurs principales avec des noms
-        for (var color in colorOptions) {
-            var mainOption = document.createElement("option");
-            mainOption.value = color;
-            mainOption.textContent = colorOptions[color].name; // Afficher le nom de la couleur
-            mainPicker.appendChild(mainOption);
-        }
-
-        // Appliquer la couleur principale et secondaire correspondante
-        applySelectedColors();
-    }
-
-    // Appliquer la couleur principale et la couleur secondaire correspondante
-    function applySelectedColors() {
-        var mainColor = document.getElementById("color-picker-main").value;
-
-        // Appliquer la couleur principale sélectionnée
-        document.documentElement.style.setProperty('--main-color', mainColor);
-
-        // Appliquer la couleur secondaire associée en fonction du mode
-        var secondaryColor = getSecondaryColor(mainColor);
-        document.documentElement.style.setProperty('--secondary-color', secondaryColor);
-    }
-
-    // Obtenir la couleur secondaire associée à la couleur principale sélectionnée
-    function getSecondaryColor(mainColor) {
-        if (document.body.dataset.theme === "light") {
-            return lightModeColors[mainColor] ? lightModeColors[mainColor].secondary : "#000000"; // Défaut à noir si la couleur n'est pas trouvée
-        } else {
-            return darkModeColors[mainColor] ? darkModeColors[mainColor].secondary : "#000000"; // Défaut à noir si la couleur n'est pas trouvée
-        }
-    }
-
-    // Sauvegarder la couleur principale sélectionnée dans le localStorage
-    function saveSelectedColor(mode) {
-        var mainColor = document.getElementById("color-picker-main").value;
-        localStorage.setItem(mode + "Color", mainColor); // Sauvegarder la couleur selon le mode
-    }
-
-    // Charger la couleur principale sauvegardée
-    function loadStoredColor() {
-        var mainColorDark = localStorage.getItem("darkColor");
-        var mainColorLight = localStorage.getItem("lightColor");
-
-        // Charger la couleur du mode actuel
-        if (document.body.dataset.theme === "light" && mainColorLight) {
-            document.getElementById("color-picker-main").value = mainColorLight;
-            applySelectedColors();
-        } else if (document.body.dataset.theme === "dark" && mainColorDark) {
-            document.getElementById("color-picker-main").value = mainColorDark;
-            applySelectedColors();
-        }
-    }
-
-    // Appliquer la couleur sauvegardée selon le mode (light ou dark)
-    function applyStoredColor(mode) {
-        var mainColor = localStorage.getItem(mode + "Color"); // Récupérer la couleur selon le mode actuel
-        if (mainColor) {
-            document.getElementById("color-picker-main").value = mainColor;
-            applySelectedColors(); // Appliquer la couleur principale et secondaire
-        }
-    }
-
-    // Event listener pour les changements de couleur principale
-    document.getElementById("color-picker-main").addEventListener("change", function() {
-        applySelectedColors();
-        saveSelectedColor(document.body.dataset.theme); // Sauvegarder la couleur selon le mode actuel
-        closeDropdownMenu(); // Fermer le menu après sélection
-    });
-
-    // Fonction pour fermer le menu déroulant
-    function closeDropdownMenu() {
-        var dropdownMenu = document.getElementById("dropdownMenu");
-        dropdownMenu.style.display = "none"; // Masquer le menu
-    }
-
-    // Charger la couleur principale sauvegardée
-    loadStoredColor();
-
-    // Initialisation des options pour le mode actuel
-    var initialModeColors = document.body.dataset.theme === "light" ? lightModeColors : darkModeColors;
-    updateColorOptions(initialModeColors);
-
-    // Afficher ou masquer le menu déroulant au clic du bouton
-    document.getElementById("dropdownButton").addEventListener("click", function() {
-        var dropdownMenu = document.getElementById("dropdownMenu");
-        var isVisible = dropdownMenu.style.display === "block";
-        dropdownMenu.style.display = isVisible ? "none" : "block";
-    });
-</script>
-
-
 </body>
 
 </html>

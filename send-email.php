@@ -17,6 +17,7 @@ require('PHPMailer-master/src/SMTP.php');
 
 
 $postData = $_POST;
+$showPopup = false;
 
 $nom = "";
 $email = "";
@@ -72,8 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'Message : ' . $message . "\r\n";
 
             $mail->send();
-            header('Location: confirmation-contact.php');
-            exit;
+            $showPopup = true;
         } catch (Exception $e) {
             $errormsg = "Erreur lors de l'envoi : {$mail->ErrorInfo}";
         }
