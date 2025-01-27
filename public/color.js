@@ -48,7 +48,7 @@ function setTheme(mode) {
     document.documentElement.style.setProperty("--background-color", isDark ? "black" : "#EFEFEF");
     document.documentElement.style.setProperty("--write", isDark ? "#FFFFFF" : "#000000");
     document.body.dataset.theme = mode;
-    icon.src = isDark ? "images/sun.svg" : "images/moon.svg";
+    icon.src = isDark ? "images/sun.png" : "images/moon.png";
 }
 
 // Mettre à jour les options du sélecteur de couleurs

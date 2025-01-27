@@ -44,7 +44,6 @@
     </section>
     <h1 class="heading">Introduction</h1>
     <div class="row">
-
         <section class="intro" id="apropos">
             <img id="visionary-img" src="images/Visionary technology-bro.svg" alt="illu-intro">
             <div class="col-md-12 d-flex flex-direction-row">
