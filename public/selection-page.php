@@ -13,18 +13,8 @@
 </head>
 
 <body>
+<div class="main"></div>
 <div id="overlay"><h1>Choisissez votre Portfolio</h1></div>
-<div id="hey"><div id="layer-up"></div></div>
-<div id="layer-0">
-  
-  <div id="layer-1">
-    <div id="layer-2">
-      <div id="lines">
-        <div id="layer-corner"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
     <div class="container">
         <div class="modes-container">
