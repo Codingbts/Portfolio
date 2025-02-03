@@ -14,7 +14,7 @@
 
 <body>
 <div class="main"></div>
-<div id="overlay"><h1>Choisissez votre Portfolio</h1></div>
+<div id="overlay"><h1>Sélection du type de <span>Portfolio</span></h1></div>
 
     <div class="container">
         <div class="modes-container">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="titre-info">
                     <span>Site</span>
-                    <h3>Temps estimé : </h3>
+                    <h3>Temps estimé : 2min</h3>
                 </div>
             </div>
 
@@ -67,3 +67,5 @@
 </body>
 
 </html>
+
+

@@ -326,69 +326,168 @@
             <h2 class="heading">EPREUVE E4</h2>
         </section>
         <section id="veille">
-            <h2 class="heading">VEILLE TECHNOLOGIQUE</h2>
-            <div class="veille-container">
-                <h3>Qu'est ce que la <span>veille technologique ?</span></h3>
-                <div class="intro-veille">
+    <h2 class="heading">VEILLE TECHNOLOGIQUE</h2>
+    <div class="veille-container">
+        <!-- Introduction à la veille technologique -->
+        <h3>Qu'est ce que la <span>veille technologique ?</span></h3>
+        <div class="intro-veille">
+            <p>
+                La <span>veille technologique</span> est un processus qui permet d'être à jour sur les innovations et les tendances
+                dans le secteur des technologies. Il est très important d'effectuer fréquemment une veille technologique
+                pour ne pas être dépassé par les changements qui ont lieu dans une industrie suite à des innovations ou à des
+                changements syntaxique dans un langage de programmation.
+                J'ai décidé d'effectuer ma veille technologique sur deux domaines qui me passionne. Ces domaines sont <span>l'intelligence
+                    artificielle</span> et la <span>robotique</span>.
+            </p>
+            <img id="ia-img" src="images/Artificial intelligence-bro.svg" alt="Robot-IA illu">
+        </div>
 
-                    <p>
-                        La <span>veille technologique</span> est un processus qui permet d'être à jour sur les innovations et les tendances
-                        dans le secteur des technologies. Il est très important d'effectuer fréquemment une veille technologique
-                        pour ne pas être dépassé par les changements qui ont lieu dans une industrie suite à des innovations ou à des
-                        changements syntaxique dans un langage de programmation. J'utilise différents moyens pour effectuer ma veille
-                        technologique. En effet, j'utilise google alerts pour être quotidiennement au courant des nouvelles publications
-                        sur le net en rapport avec l'intelligence artificielle et la robotique. Je suis par ailleurs abonné à plusieurs newlestter pour être tenu au courant des nouveautés. De plus, je suis abonné à des chaines YouTube
-                        qui parle de ses domaines.
-                        J'ai décidé d'effectuer ma veille technologique sur deux domaines qui me passionne. Ces domaines sont <span>l'intelligence
-                            artificielle</span> et la <span>robotique</span>.
-                    </p>
-                    <img id="ia-img" src="images/Artificial intelligence-bro.svg" alt="Robot-IA illu">
-                </div>
-                <div class="IA">
-                    <h3><span>Intelligence artificielle</span></h3>
-                    <div class="dev-IA">
-                        <p>J'ai toujours été fasciné par l'Intelligence Artificielle. </p>
+        <!-- Overlay pour le fond semi-transparent -->
+        <div class="overlay"></div>
+
+        <!-- Section des outils de veille -->
+        <div class="veille-tools" id="veille-tools">
+            <h3>Outils utilisés pour effectuer ma veille</h3>
+            <div class="tools-container">
+                <!-- Google Alerts -->
+                <div class="tools">
+                    <div class="tools-img" data-popup="popup-veille-google">
+                        <svg viewBox="0 0 15.651 15.651" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M14.711,9.084c1.383-2.103,1.22-4.911-0.363-6.78c0.188-0.528,0.216-1.363-0.638-1.93 c-0.859-0.571-1.603-0.239-2.007,0.131c-2.324-0.73-4.978,0.222-6.396,2.332L3.685,5.278C3.213,5.986,2.731,6.045,1.854,6.151 c-0.356,0.041-0.759,0.09-1.219,0.194C0.611,6.35,0.591,6.361,0.569,6.37c-0.22,0.028-0.387,0.107-0.484,0.253 C-0.548,7.576,2.468,10.151,5,11.922c-0.422,0.501-0.54,1.22-0.24,1.849c0.409,0.859,1.437,1.223,2.296,0.813 c0.382-0.182,0.658-0.49,0.82-0.848c2.309,1.311,4.773,2.361,5.291,1.582c0.069-0.104,0.093-0.227,0.08-0.366 c0.026-0.064,0.036-0.138,0.022-0.21c-0.088-0.496-0.212-0.896-0.321-1.25c-0.246-0.799-0.369-1.2,0.085-1.884L14.711,9.084z M0.845,7.099c0.004-0.027,0.008-0.054,0.021-0.074c0.269-0.404,2.617,0.356,5.917,2.464L5.92,11.354 c-0.118,0.027-0.234,0.066-0.348,0.12c-0.042,0.021-0.077,0.048-0.117,0.07C2.375,9.421,0.763,7.62,0.845,7.099z M12.493,14.753 c-0.019,0.028-0.049,0.05-0.087,0.066c-0.428,0.188-2.066-0.336-4.383-1.655c0.023-0.292-0.021-0.593-0.156-0.877 c-0.039-0.082-0.09-0.158-0.14-0.231l0.68-1.468C11.307,12.663,12.748,14.368,12.493,14.753z" />
+                        </svg>
+                    </div>
+                    <div class="tools-title">
+                        <p>Google alerts</p>
                     </div>
                 </div>
 
-                <div class="robotique">
-                    <h3><span>Robotique</span></h3>
+                <!-- Feedly -->
+                <div class="tools">
+                    <div class="tools-img" data-popup="popup-veille-feedly">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M18.479 2.651c-1.364-1.391-3.604-1.391-4.968 0l-12.484 12.719c-1.365 1.412-1.365 3.652 0 5.057l8.911 9.079c0.636 0.573 1.464 0.885 2.317 0.885h7.485c0.943 0 1.839-0.38 2.495-1.052l8.739-8.901c1.371-1.411 1.371-3.651 0-5.063zM18.136 25.88l-1.251 1.265c-0.093 0.1-0.219 0.157-0.355 0.157h-1.067c-0.125-0.005-0.24-0.048-0.328-0.131l-1.276-1.292c-0.193-0.203-0.193-0.52 0-0.724l1.785-1.812c0.193-0.204 0.511-0.204 0.709 0l1.781 1.812c0.197 0.204 0.197 0.527 0 0.724zM18.136 18.265l-4.985 5.079c-0.093 0.093-0.224 0.151-0.359 0.145h-1.063c-0.125 0.005-0.245-0.041-0.333-0.12l-1.271-1.296c-0.193-0.199-0.193-0.521 0-0.724l5.52-5.62c0.193-0.199 0.516-0.199 0.709 0l1.781 1.817c0.197 0.199 0.197 0.521 0 0.719zM18.136 10.656l-8.724 8.88c-0.095 0.1-0.219 0.152-0.355 0.152h-1.068c-0.125 0-0.24-0.043-0.333-0.125l-1.271-1.297c-0.192-0.197-0.192-0.52 0-0.719l9.26-9.427c0.193-0.199 0.511-0.199 0.709 0l1.781 1.812c0.197 0.204 0.197 0.527 0 0.724z" />
+                        </svg>
+                    </div>
+                    <div class="tools-title">
+                        <p>Feedly</p>
+                    </div>
+                </div>
+
+                <!-- Youtube -->
+                <div class="tools">
+                    <div class="tools-img" data-popup="popup-veille-ytb">
+                        <svg viewBox="-271 311.2 256 179.8" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M-59.1,311.2h-167.8c0,0-44.1,0-44.1,44.1v91.5c0,0,0,44.1,44.1,44.1h167.8c0,0,44.1,0,44.1-44.1v-91.5C-15,355.3-15,311.2-59.1,311.2z M-177.1,450.3v-98.5l83.8,49.3L-177.1,450.3z" />
+                        </svg>
+                    </div>
+                    <div class="tools-title">
+                        <p>Youtube</p>
+                    </div>
                 </div>
             </div>
-        </section>
-        <section class="contact" id="contact">
-            <h2 class="heading">CONTACTEZ-<span>MOI</span></h2>
-            <div class="form-contact">
-                <form action="" method="POST" id="contact-form">
-                    <div id="error-message"></div>
-                    <div class="input-group">
-                        <div class="input-box">
-                            <input type="text" name="name" id="name" placeholder="Nom" autocomplete="off">
-                            <input type="email" name="email" id="email" placeholder="Email" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="input-group2">
-                        <div class="input-box">
-                            <input type="text" name="subject" id="subject" placeholder="Objet" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="input-group3">
-                        <textarea name="message" id="message" placeholder="Message" autocomplete="off"></textarea>
-                        <button class="btn btn-primary" id="btn-envoie" type="submit" onclick="togglePopup">Envoyer</button>
-                    </div>
-                </form>
+        </div>
+
+        <!-- Popups -->
+        <div id="popup-veille-google" class="popup">
+            <div class="popup-tools">
+                <span class="close-popup">×</span>
+                <h3>Google alerts</h3>
+                <svg viewBox="0 0 15.651 15.651" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M14.711,9.084c1.383-2.103,1.22-4.911-0.363-6.78c0.188-0.528,0.216-1.363-0.638-1.93 c-0.859-0.571-1.603-0.239-2.007,0.131c-2.324-0.73-4.978,0.222-6.396,2.332L3.685,5.278C3.213,5.986,2.731,6.045,1.854,6.151 c-0.356,0.041-0.759,0.09-1.219,0.194C0.611,6.35,0.591,6.361,0.569,6.37c-0.22,0.028-0.387,0.107-0.484,0.253 C-0.548,7.576,2.468,10.151,5,11.922c-0.422,0.501-0.54,1.22-0.24,1.849c0.409,0.859,1.437,1.223,2.296,0.813 c0.382-0.182,0.658-0.49,0.82-0.848c2.309,1.311,4.773,2.361,5.291,1.582c0.069-0.104,0.093-0.227,0.08-0.366 c0.026-0.064,0.036-0.138,0.022-0.21c-0.088-0.496-0.212-0.896-0.321-1.25c-0.246-0.799-0.369-1.2,0.085-1.884L14.711,9.084z M0.845,7.099c0.004-0.027,0.008-0.054,0.021-0.074c0.269-0.404,2.617,0.356,5.917,2.464L5.92,11.354 c-0.118,0.027-0.234,0.066-0.348,0.12c-0.042,0.021-0.077,0.048-0.117,0.07C2.375,9.421,0.763,7.62,0.845,7.099z M12.493,14.753 c-0.019,0.028-0.049,0.05-0.087,0.066c-0.428,0.188-2.066-0.336-4.383-1.655c0.023-0.292-0.021-0.593-0.156-0.877 c-0.039-0.082-0.09-0.158-0.14-0.231l0.68-1.468C11.307,12.663,12.748,14.368,12.493,14.753z" />
+                </svg>
+                <p> Google Alerts est un service de notification gratuit de Google qui avertit les utilisateurs
+                    par courrier électronique, lorsque de nouveaux résultats s’affichent dans le moteur de recherche
+                    pour un mot-clé donné. Il prend en compte les sources web et les utilisateurs peuvent choisir la
+                    fréquence de la réception des courriels qui résument l’activité de recherche autour des mots-clés.</p>
             </div>
+        </div>
 
+        <div id="popup-veille-feedly" class="popup">
+            <div class="popup-tools">
+                <span class="close-popup">×</span>
+                <h3>Feedly</h3>
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M18.479 2.651c-1.364-1.391-3.604-1.391-4.968 0l-12.484 12.719c-1.365 1.412-1.365 3.652 0 5.057l8.911 9.079c0.636 0.573 1.464 0.885 2.317 0.885h7.485c0.943 0 1.839-0.38 2.495-1.052l8.739-8.901c1.371-1.411 1.371-3.651 0-5.063zM18.136 25.88l-1.251 1.265c-0.093 0.1-0.219 0.157-0.355 0.157h-1.067c-0.125-0.005-0.24-0.048-0.328-0.131l-1.276-1.292c-0.193-0.203-0.193-0.52 0-0.724l1.785-1.812c0.193-0.204 0.511-0.204 0.709 0l1.781 1.812c0.197 0.204 0.197 0.527 0 0.724zM18.136 18.265l-4.985 5.079c-0.093 0.093-0.224 0.151-0.359 0.145h-1.063c-0.125 0.005-0.245-0.041-0.333-0.12l-1.271-1.296c-0.193-0.199-0.193-0.521 0-0.724l5.52-5.62c0.193-0.199 0.516-0.199 0.709 0l1.781 1.817c0.197 0.199 0.197 0.521 0 0.719zM18.136 10.656l-8.724 8.88c-0.095 0.1-0.219 0.152-0.355 0.152h-1.068c-0.125 0-0.24-0.043-0.333-0.125l-1.271-1.297c-0.192-0.197-0.192-0.52 0-0.719l9.26-9.427c0.193-0.199 0.511-0.199 0.709 0l1.781 1.812c0.197 0.204 0.197 0.527 0 0.724z" />
+                </svg>
+                <p> Feedly est un outil qui permet de s’abonner à des flux RSS et de recevoir
+                    automatiquement des contenus provenant d’autres sites web, qu’il s’agisse
+                    d’un journal ou d’un article de blog. Le flux RSS correspond quant à lui
+                    à une technologie qui permet la distribution automatique de contenus web
+                    directement chez l’utilisateur.</p>
+            </div>
+        </div>
 
-            <div id="popup-overlay">
-                <div class="popup-content">
-                    <h1>Votre message a bien été envoyé.</h1>
-                    <h2>Merci d'avoir pris le temps de me contacter !</h2>
-                    <img src="images/Contact us-bro.svg" alt="Contact-img" id="contact-img">
-                    <a href="portfolio.php">Retourner à mon portfolio</a>
+        <div id="popup-veille-ytb" class="popup">
+            <div class="popup-tools">
+                <span class="close-popup">×</span>
+                <h3>Youtube</h3>
+                <svg viewBox="-271 311.2 256 179.8" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M-59.1,311.2h-167.8c0,0-44.1,0-44.1,44.1v91.5c0,0,0,44.1,44.1,44.1h167.8c0,0,44.1,0,44.1-44.1v-91.5C-15,355.3-15,311.2-59.1,311.2z M-177.1,450.3v-98.5l83.8,49.3L-177.1,450.3z" />
+                </svg>
+                <p> YouTube est une plateforme en ligne permettant aux internautes de mettre en ligne,
+                    visionner et partager des vidéos.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sections pour l'intelligence artificielle et la robotique -->
+    <div class="info-teck">
+        <h3><span>Intelligence artificielle</span></h3>
+        <div class="theme">
+            <p>
+                L’intelligence artificielle (IA) est une technologie
+                qui permet aux ordinateurs et aux machines de simuler
+                l’apprentissage, la compréhension, la résolution de
+                problèmes, la prise de décision, la créativité et
+                l’autonomie de l’être humain.
+            </p>
+        </div>
+    </div>
+
+    <div class="info-teck">
+        <h3><span>Robotique</span></h3>
+        <div class="theme">
+            <p>
+                La robotique est un domaine d'activité recouvrant
+                l'étude, la conception et la fabrication de
+                robots ou machines automatisées.
+            </p>
+        </div>
+    </div>
+</section>
+    <section class="contact" id="contact">
+        <h2 class="heading">CONTACTEZ-<span>MOI</span></h2>
+        <div class="form-contact">
+            <form action="" method="POST" id="contact-form">
+                <div id="error-message"></div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <input type="text" name="name" id="name" placeholder="Nom" autocomplete="off">
+                        <input type="email" name="email" id="email" placeholder="Email" autocomplete="off">
+                    </div>
                 </div>
+                <div class="input-group2">
+                    <div class="input-box">
+                        <input type="text" name="subject" id="subject" placeholder="Objet" autocomplete="off">
+                    </div>
+                </div>
+                <div class="input-group3">
+                    <textarea name="message" id="message" placeholder="Message" autocomplete="off"></textarea>
+                    <button class="btn btn-primary" id="btn-envoie" type="submit" onclick="togglePopup">Envoyer</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div id="popup-overlay">
+            <div class="popup-content">
+                <h1>Votre message a bien été envoyé.</h1>
+                <h2>Merci d'avoir pris le temps de me contacter !</h2>
+                <img src="images/Contact us-bro.svg" alt="Contact-img" id="contact-img">
+                <a href="portfolio.php">Retourner à mon portfolio</a>
             </div>
-        </section>
+        </div>
+    </section>
     </div>
 
     <?php require_once(__DIR__ . '/footer.php') ?>
@@ -406,10 +505,96 @@
 
         <?php if ($showPopup): ?>
             document.addEventListener("DOMContentLoaded", () => {
-                togglePopup(); // Show popup on load if email sent successfully
+                togglePopup();
             });
         <?php endif; ?>
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Fonction pour empêcher le défilement
+            function preventScroll(event) {
+                event.preventDefault();
+            }
+
+            function togglePopupVeille(event) {
+                event.preventDefault();
+
+                const targetId = event.currentTarget.getAttribute("data-popup");
+                const popup = document.getElementById(targetId);
+                const overlay = document.querySelector(".overlay");
+
+                if (popup && overlay) {
+                    // Si le popup est déjà ouvert, ne rien faire
+                    if (popup.classList.contains("open")) return;
+
+                    // Ouvrir le popup avec l'animation
+                    popup.classList.add("open");
+                    overlay.classList.add("open");
+
+                    // Désactiver le défilement de la page
+                    document.body.classList.add("no-scroll");
+
+                    // Empêcher le défilement avec la molette
+                    document.addEventListener("wheel", preventScroll, {
+                        passive: false
+                    });
+                }
+            }
+
+            function closePopupWithAnimation(popup, overlay) {
+                // Ajouter les classes pour l'animation inversée
+                popup.classList.add("popup-closing");
+
+                // Attendre la fin de l'animation avant de fermer le popup
+                popup.addEventListener(
+                    "animationend",
+                    () => {
+                        popup.classList.remove("open", "popup-closing");
+                        overlay.classList.remove("open");
+
+                        // Réactiver le défilement de la page
+                        document.body.classList.remove("no-scroll");
+
+                        // Rétablir le défilement avec la molette
+                        document.removeEventListener("wheel", preventScroll);
+                    }, {
+                        once: true
+                    } // Supprimer l'écouteur après la première exécution
+                );
+            }
+
+            function closePopup(event) {
+                event.preventDefault();
+                const popup = event.currentTarget.closest(".popup");
+                const overlay = document.querySelector(".overlay");
+                if (popup && overlay) {
+                    closePopupWithAnimation(popup, overlay);
+                }
+            }
+
+            // Gestion des clics sur les logos pour ouvrir le popup
+            document.querySelectorAll(".tools-img").forEach((img) => {
+                img.addEventListener("click", togglePopupVeille);
+            });
+
+            // Gestion des clics sur le bouton de fermeture (la croix)
+            document.querySelectorAll(".close-popup").forEach((closeBtn) => {
+                closeBtn.addEventListener("click", closePopup);
+            });
+
+            // Fermer le popup en cliquant à l'extérieur (sur l'overlay)
+            const overlay = document.querySelector(".overlay");
+            if (overlay) {
+                overlay.addEventListener("click", () => {
+                    const popup = document.querySelector(".popup.open");
+                    if (popup) {
+                        closePopupWithAnimation(popup, overlay);
+                    }
+                });
+            }
+        });
+    </script>
+
 </body>
 
 </html>

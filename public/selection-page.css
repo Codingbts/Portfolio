@@ -1,6 +1,6 @@
 :root {
   --background-color: black;
-  --color-green: #00FF00;
+  --color-green: #04F430;
   --text-shadow-neon: 0 0 35px var(--color-green);
   --cursor-url: url('curseur.cyberpunk.svg') 25 25, auto;
   --font-family: 'Oberon', sans-serif;
@@ -58,6 +58,10 @@ h1 {
   text-shadow: var(--text-shadow-neon);
   margin-bottom: 100px;
 
+}
+
+h1 span{
+  color: var(--color-green);
 }
 
 h1 .highlight {
